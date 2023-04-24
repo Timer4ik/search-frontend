@@ -1,9 +1,9 @@
 <template>
-  <SearchBlock />
+  <MainSearchBlock />
 </template>
 
 <script setup>
-import SearchBlock from "@/components/MainPage/SearchBlock.vue";
+import MainSearchBlock from "@/components/MainPage/MainSearchBlock.vue";
 </script>
 
 <style scoped>

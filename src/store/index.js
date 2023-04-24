@@ -47,19 +47,18 @@ const wait = (ms) => new Promise((resolve, reject) => {
 
 export default createStore({
   state: {
-    searchValue: "",
     searchTypedValue: null,
     searchList: []
   },
   getters: {
     getSearchList(state) {
       return state.searchList
+    },
+    getSearchTypedValue(state) {
+      return state.searchTypedValue
     }
   },
   mutations: {
-    setSearchValue(state, _searchValue) {
-      state.searchValue = _searchValue
-    },
     setSearchTypedValue(state, _searchTypedValue) {
       state.searchTypedValue = _searchTypedValue
     },

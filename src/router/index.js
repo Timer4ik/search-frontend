@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import MainPage from '@/pages/MainPage.vue'
-import SearchResultPage from "@/pages/SearchResultPage.vue"
+import ResultPage from "@/pages/ResultPage.vue"
 
 const routes = [
   {
@@ -11,7 +11,7 @@ const routes = [
   {
     path: '/search-result',
     name: 'search-result',
-    component: SearchResultPage
+    component: ResultPage
   }
 ]
 

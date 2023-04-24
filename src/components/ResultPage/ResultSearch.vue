@@ -1,14 +1,22 @@
 <template>
   <div class="search-block">
+    <div>
+      <div class="search-type">
+        Тип поисковой сущности:
+        <span class="bold-font">{{
+          searchTypedValue?.type?.ru ?? "неопределён"
+        }}</span>
+      </div>
+      <div class="search-type">
+        Значение поиска:
+        <span class="bold-font">{{ searchTypedValue?.handledValue }}</span>
+      </div>
+    </div>
     <SearchForm
       :value="searchValue"
       @input="handleInput"
       @submit="handleSubmit"
     />
-    <div class="search-type">
-      Тип поисковой сущности:
-      <span class="bold-font">{{ searchTypedValue?.type?.ru ?? "неопределён" }}</span>
-    </div>
   </div>
 </template>
 
@@ -29,26 +37,15 @@ const handleInput = (e) => {
 
   if (!value.length) return (searchTypedValue.value = null);
 
-  searchTypedValue.value = getCheckResult(e.target.value);
+  searchTypedValue.value = getCheckResult(value);
 };
 
 const handleSubmit = (event) => {
-  store.commit("setSearchValue", searchValue.value);
   store.commit("setSearchTypedValue", searchTypedValue.value);
-
-  router.push("search-result");
 };
 </script>
 
 <style scoped>
-.search-block {
-  height: 100%;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
 .search-type {
 }
 .bold-font {

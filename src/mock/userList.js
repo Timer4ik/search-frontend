@@ -107,7 +107,7 @@ export const userList = () => [
         id: 14,
         phone: "+7 937 127-54-12",
         email: "birdsinthetrap@mail.ru",
-        nickname: "Colabb",
+        nickname: "Coabb",
         ip: "91.88.14.51",
         surname_and_name: "Ismai Wolf"
     },
@@ -121,11 +121,11 @@ export const userList = () => [
     },
     {
         id: 16,
-        phone: "+7 937 127-54-12",
+        phone: "+7 93712754-12",
         email: "birdsinthetrap@mail.ru",
         nickname: "Colabb",
         ip: "91.88.14.51",
-        surname_and_name: "Ismai Wolf"
+        surname_and_name: "Isddai Wolf"
     },
     {
         id: 17,
