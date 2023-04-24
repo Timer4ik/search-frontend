@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import MainPage from '../pages/MainPage.vue'
-import SearchResultPage from "../pages/SearchResultPage.vue"
+import MainPage from '@/pages/MainPage.vue'
+import SearchResultPage from "@/pages/SearchResultPage.vue"
 
 const routes = [
   {
@@ -9,8 +9,8 @@ const routes = [
     component: MainPage
   },
   {
-    path: '/:query',
-    name: 'search_result',
+    path: '/search-result',
+    name: 'search-result',
     component: SearchResultPage
   }
 ]

@@ -17,7 +17,7 @@ export const userList = () => [
     },
     {
         id: 3,
-        phone: "8 800 444 55 44",
+        phone: "+79424377297",
         email: "timergalievadel@yandex.ru",
         nickname: "@fdsaf",
         ip: "255.255.255.255",
@@ -25,7 +25,7 @@ export const userList = () => [
     },
     {
         id: 4,
-        phone: "+7 952 907-63-37",
+        phone: "+7 (952)907-63-37",
         email: "genesis1774@yandex.ru",
         nickname: "SoFaygo",
         ip: "211.128.124.159",
@@ -49,7 +49,7 @@ export const userList = () => [
     },
     {
         id: 7,
-        phone: "+7 923 742-99-59",
+        phone: "+79529076337",
         email: "weinlovecultt@gmail.com",
         nickname: "AloKto",
         ip: "216.157.113.97",
@@ -73,7 +73,7 @@ export const userList = () => [
     },
     {
         id: 10,
-        phone: "+7 955 858-71-78",
+        phone: "+7 952 907-63-37",
         email: "Etti553@mail.ru",
         nickname: "Moryypower",
         ip: "30.120.43.37",
