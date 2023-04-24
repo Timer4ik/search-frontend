@@ -79,7 +79,8 @@ export function checkIsNickName(value) {
     return {
         type: Type.NICKNAME,
         initialValue: value,
-        handledValue: normalizeName
+        handledValue: normalizeName[0] !== "@" ?
+            normalizeName : normalizeName.slice(1, normalizeName.length)
     }
 }
 

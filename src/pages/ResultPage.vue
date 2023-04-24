@@ -1,5 +1,6 @@
 <template>
   <div class="myWrapper">
+    <RouterLink to="/">Вернуться на главную</RouterLink>
     <ResultSearch />
     <SearchResult />
   </div>

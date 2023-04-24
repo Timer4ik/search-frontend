@@ -1,8 +1,6 @@
 <template>
-  <RouterLink to="/">Вернуться на главную</RouterLink>
-
   <div class="centered-text" v-if="isLoading">
-    <h1>Поиск пользователей...</h1>
+    <h4>Поиск пользователей...</h4>
   </div>
   <div
     v-else-if="searchListResult.length"
@@ -40,7 +38,7 @@
     </div>
   </div>
   <div class="centered-text" v-else>
-    <h1>Ничего не найдено</h1>
+    <h4>Ничего не найдено</h4>
   </div>
 </template>
 
@@ -79,10 +77,6 @@ onMounted(async () => {
 </script>
 
 <style scoped>
-
 .centered-text {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 </style>
