@@ -2,7 +2,7 @@
 const Type = {
     NICKNAME: "NICKNAME",
     SURNAME_AND_NAME: "SURNAME_AND_NAME",
-    PHONE: "phone",
+    PHONE: "PHONE",
     EMAIL: "EMAIL",
     IP: "IP"
 }
@@ -11,25 +11,30 @@ const Checks = {
 
     checkIsPhone(value) {
         // "888402fh".match(/[a-zA-Z]/g)
+        value = value.trim()
         const isHaveLetters = value.match(/[a-zA-Z]/g)
 
         if (isHaveLetters) return
 
         const numbers = value.match(/[0-9]/g);
 
-        if (numbers.length !== 11 && numbers.length !== 10) return
+        const hasPlus = value[0] == "+"
+        const country = numbers.slice(0, numbers.length - 10).join("")
+        const numWithoutCountry = numbers.slice(numbers.length - 10, numbers.length)
 
-        let phone = numbers.join("")
+        if (numWithoutCountry.length !== 10) return
+
+        let phone = hasPlus ? `+${country}${numWithoutCountry.join("")}` : numbers.join("")
 
         return {
             type: Type.PHONE,
             initialValue: value,
-            handledValue: phone.length === 11 ? phone.slice(1, 11) : phone
+            handledValue: phone
         }
     },
 
     checkIsEmail(value) {
-
+        value = value.toLowerCase().trim()
         const regx = /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i
 
         let isEmail = regx.test(value)
@@ -44,6 +49,7 @@ const Checks = {
     },
 
     checkIsSurnameAndName(value) {
+        value = value.trim()
         const stringWords = value.trim().split(" ")
 
         if (stringWords.length !== 2) return
@@ -58,7 +64,8 @@ const Checks = {
     },
 
     checkIsNickName(value) {
-
+        console.log(value);
+        value = value.trim()
         const stringWords = value.trim().split(" ")
 
         if (stringWords.length !== 1) return
@@ -82,7 +89,7 @@ const Checks = {
     },
 
     checkIsIp(value) {
-
+        value = value.trim()
         let regx = /^(?:(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\.){3}(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])$/
 
         let isValidIp = regx.test(value.trim())
